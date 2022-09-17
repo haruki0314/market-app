@@ -5,10 +5,11 @@ const connectDB = async () => {
   console.log("--database--");
   try {
     await mongoose.connect(
-      "mongodb+srv://haruki:<Ha12ru34>@cluster0.vsavogn.mongodb.net/appDataBase?retryWrites=true&w=majority"
+      "mongodb+srv://haru:Ha12ru34@cluster0.pzm924t.mongodb.net/?retryWrites=true&w=majority"
     );
     console.log("Success:Connected to MongoDB");
   } catch (err) {
+    console.log(err);
     console.log("Failure:Unconected to MongoD");
     throw new Error();
   }

@@ -1,7 +1,7 @@
 //アイテムデータのSchemeを作成
 import mongoose from "mongoose";
 
-const Schema = mongoose.Shema;
+const Schema = mongoose.Schema;
 
 const ItemSchema = new Schema({
   title: String,
