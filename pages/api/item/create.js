@@ -5,9 +5,10 @@ import { ItemModel } from "../utils/schemeModels";
 const createItem = async (req, res) => {
   try {
     console.log("--create.js--");
-    //DB接続
     await connectDB();
-    console.log(req.body.title);
+    // console.log("MongoDB接続成功");
+    //DB接続
+    console.log(req.body);
     await ItemModel.create(req.body);
     return res.status(200).json({ message: "アイテム作成成功" });
   } catch (err) {
