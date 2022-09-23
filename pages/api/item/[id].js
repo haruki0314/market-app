@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import connectDB from "../../../utils/datebase";
 import { ItemModel } from "../../../utils/schemeModels";
+import auth from "../user/auth";
 
 const getSigleItem = async (req, res) => {
   console.log("-- --??.jsです-- --");
@@ -30,4 +31,4 @@ const getSigleItem = async (req, res) => {
   }
 };
 
-export default getSigleItem;
+export default auth(getSigleItem);

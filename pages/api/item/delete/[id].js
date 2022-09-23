@@ -1,5 +1,7 @@
 import connectDB from "../../../../utils/datebase";
 import { ItemModel } from "../../../../utils/schemeModels";
+import auth from "../../user/auth";
+
 const deleteItem = async (req, res) => {
   try {
     await connectDB();
@@ -11,4 +13,4 @@ const deleteItem = async (req, res) => {
     return res.status(400).json({ message: "アイテム消去失敗" });
   }
 };
-export default deleteItem;
+export default auth(deleteItem);

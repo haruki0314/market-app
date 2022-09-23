@@ -1,7 +1,7 @@
 //書き込みを行うコード
-import connectDB from "../utils/datebase";
-import { ItemModel } from "../utils/schemeModels";
-
+import connectDB from "../../../utils/datebase";
+import { ItemModel } from "../../../utils/schemeModels";
+import auth from "../user/auth";
 const createItem = async (req, res) => {
   try {
     console.log("--create.js--");
@@ -16,7 +16,7 @@ const createItem = async (req, res) => {
   }
   // return 0;
 };
-export default createItem;
+export default auth(createItem);
 
 // Ha12ru34;
 // user:haruki

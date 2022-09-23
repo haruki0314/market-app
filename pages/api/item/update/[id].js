@@ -2,6 +2,7 @@ import connectDB from "../../../../utils/datebase";
 import { ItemModel } from "../../../../utils/schemeModels";
 const updateItem = async (req, res) => {
   try {
+    console.log(req);
     await connectDB();
     await ItemModel.updateOne({ _id: req.query.id }, req.body);
     return res.status(200).send({
