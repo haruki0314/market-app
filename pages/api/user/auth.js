@@ -9,7 +9,7 @@ const auth = (handler) => {
 
     console.log(req);
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhcnVraTE0NzJAaWNsb3VkLmNvbSIsImlhdCI6MTY2Mzk0MTkxMiwiZXhwIjoxNjY0MDI0NzEyfQ.srxU8IsgvAnjdHljMwsp2Sl0h2UtHt8Pi3tzjEhf0A8";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhhcnVraTE0NzJAaWNsb3VkLmNvbSIsImlhdCI6MTY2NDgwODA4OCwiZXhwIjoxNjY0ODkwODg4fQ.Y4xG7xRIxjzxzeOUljJRJWpWU5ACJGIJiWiu5tb-dhA";
     // const token = await req.headers.authorization.split(" ")[1];
 
     if (!token) {
