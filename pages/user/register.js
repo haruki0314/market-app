@@ -1,8 +1,33 @@
+import { useState } from "react";
 const Register = () => {
+  const [name, setName] = useState("");
+  console.log(name);
+  const handleSubmit = () => {
+    try {
+      fetch("http://localhost:3000/api/user/register", {
+        method: "POST",
+        headers: {
+          Accepst: "application/json",
+          "Contet-Type": "application/json",
+        },
+        body: "ダミーデータ",
+      });
+    } catch (err) {}
+  };
   return (
     <div>
       <h1>ユーザー登録</h1>
-      <form></form>
+      <form onSubmit={handleSubmit}>
+        <input value="{name}" type="text" name="name" placeholder="名前" required />
+        <input
+          type="text"
+          name="password"
+          placeholder="メールアドレス"
+          required
+        />
+        <input type="text" name="password" placeholder="パスワード" required />
+        <button>登録</button>
+      </form>
     </div>
   );
 };
