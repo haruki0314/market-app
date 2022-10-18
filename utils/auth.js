@@ -9,7 +9,7 @@ const auth = (handler) => {
     }
 
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAY28uanAiLCJpYXQiOjE2NjU4NDQ4OTgsImV4cCI6MTY2NTkyNzY5OH0.VQmDLCoQVhQOgJfSzcJi-NaCS5Impe0ftQ4X3xG3bic";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFAY28uanAiLCJpYXQiOjE2NjYxMDQ0NTksImV4cCI6MTY2NjE4NzI1OX0.2YjBfnm6ohmmnmRrav1Mbtuy12v1hHlZ6NExt_7wKnI";
 
     //await req.headers.authorization.split(" ")[1]
 
