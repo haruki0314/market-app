@@ -18,9 +18,10 @@ const Login = () => {
         }),
       });
       const jsonData = await response.json();
-      alert("success");
-      localStorage("token", jsonData.json);
+      alert("success" + jsonData);
+      localStorage.setItem("token", jsonData.json);
     } catch (err) {
+      alert(err);
       console.log(err);
       alert("ログイン失敗");
     }
