@@ -1,15 +1,27 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const ReadAllitems = (props) => {
   console.log(props);
   return (
     <div>
       <h1 className="h1-style">こんにちは</h1>
       {props.allItems.map((item) => (
-        <div key={item._id}>
-          <img src={item.image} />
-          <h2>{item.price}</h2>
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
-        </div>
+        <Link href={`/item/${item_id}`} key={item._id}>
+          <a>
+            <Image
+              src={item.image}
+              width="750px"
+              height="500px"
+              alt="item-image"
+            />
+            <div>
+              <h2>{item.price}</h2>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </a>
+        </Link>
       ))}
     </div>
   );
