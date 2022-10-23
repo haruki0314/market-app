@@ -19,7 +19,8 @@ const Login = () => {
       });
       const jsonData = await response.json();
       alert("success" + jsonData);
-      localStorage.setItem("token", jsonData.json);
+      console.log("ここまできてる？" + jsonData);
+      localStorage.setItem("token", jsonData.token);
     } catch (err) {
       alert(err);
       console.log(err);
