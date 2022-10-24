@@ -14,16 +14,18 @@ const CreateItem = () => {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
-          authorization: `Bearer${localStorage.getItem("token")}`,
+          authorization: `Bearer ${localStorage.getItem("token")}`,
         },
         body: JSON.stringify({
           title: title,
           price: price,
           image: image,
           description: description,
+          email: "",
         }),
       });
       const jsonData = await response.json();
+      alert(jsonData.message);
       console.log(jsonData);
       alert("item crete success:" + jsonData);
     } catch (e) {
@@ -38,7 +40,7 @@ const CreateItem = () => {
         <input
           type="text"
           value={title}
-          name="tile"
+          name="title"
           placeholder="アイテム名"
           required
           onChange={(e) => setTitle(e.target.value)}
