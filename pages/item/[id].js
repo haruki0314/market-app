@@ -1,10 +1,17 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ReadSingleItem = (props) => {
   return (
     <div>
       <h1>ReadSingleItem</h1>
+      <Link href={`/item/update/${props.singleItem._id}`}>
+        <a>アイテム編集</a>
+      </Link>
+      <Link href={`/item/delete/${props.singleItem._id}`}>
+        <a>アイテム消去</a>
+      </Link>
       <Image
         src={props.singleItem.image}
         width="750px"
