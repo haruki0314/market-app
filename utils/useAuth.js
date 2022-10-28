@@ -5,7 +5,7 @@ const secret_key = "nextmarket";
 
 const useAuth = () => {
   const [loginUser, setLoginUser] = useState("");
-  const router = useRouter;
+  const router = useRouter();
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) router.push("/user/login");
