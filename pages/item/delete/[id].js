@@ -27,7 +27,7 @@ const DleteItem = (props) => {
     }
   };
   const loginUser = useAuth();
-  if (loginUSer === props.singleItem.email) {
+  if (loginUser === props.singleItem.email) {
     return (
       <div>
         <h1>アイテム更新</h1>
