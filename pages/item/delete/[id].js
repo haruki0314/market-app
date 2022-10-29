@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import useAuth from "../../../utils/useAuth";
 
 const DleteItem = (props) => {
   const handleSubmit = async (e) => {
@@ -25,25 +26,34 @@ const DleteItem = (props) => {
       alert("item update failed");
     }
   };
-  return (
-    <div>
-      <h1>アイテム更新</h1>
-      <form onSubmit={handleSubmit}>
-        <h2>{props.singleItem.title}</h2>
-        <Image
-          src={props.singleItem.image}
-          width="750px"
-          height="500px"
-          alt="item-image"
-        />
+  const loginUser = useAuth();
+  if (loginUSer === props.singleItem.email) {
+    return (
+      <div>
+        <h1>アイテム更新</h1>
+        <form onSubmit={handleSubmit}>
+          <h2>{props.singleItem.title}</h2>
+          <Image
+            src={props.singleItem.image}
+            width="750px"
+            height="500px"
+            alt="item-image"
+          />
 
-        <h3>\{props.singleItem.price}</h3>
-        <p>{props.singleItem.price}</p>
+          <h3>\{props.singleItem.price}</h3>
+          <p>{props.singleItem.price}</p>
 
-        <button>消去</button>
-      </form>
-    </div>
-  );
+          <button>消去</button>
+        </form>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>権限がありません</h1>
+      </div>
+    );
+  }
 };
 export default DleteItem;
 

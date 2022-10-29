@@ -35,47 +35,48 @@ const CreateItem = () => {
     }
   };
   const loginUser = useAuth();
-  console.log(loginUser);
-  return (
-    <div>
-      <h1>アイテム作成</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={title}
-          name="title"
-          placeholder="アイテム名"
-          required
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          value={price}
-          name="price"
-          placeholder="価格"
-          required
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <input
-          type="text"
-          value={image}
-          name="image"
-          placeholder="画像"
-          required
-          onChange={(e) => setImage(e.target.value)}
-        />
-        <textarea
-          type="text"
-          value={description}
-          name="description"
-          rows="15"
-          placeholder="商品説明"
-          required
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-        <button>作成</button>
-      </form>
-    </div>
-  );
+  if (loginUser) {
+    return (
+      <div>
+        <h1>アイテム作成</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={title}
+            name="title"
+            placeholder="アイテム名"
+            required
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            value={price}
+            name="price"
+            placeholder="価格"
+            required
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            value={image}
+            name="image"
+            placeholder="画像"
+            required
+            onChange={(e) => setImage(e.target.value)}
+          />
+          <textarea
+            type="text"
+            value={description}
+            name="description"
+            rows="15"
+            placeholder="商品説明"
+            required
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+          <button>作成</button>
+        </form>
+      </div>
+    );
+  }
 };
 export default CreateItem;

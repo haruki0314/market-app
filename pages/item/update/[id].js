@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useAuth from "../../../utils/useAuth";
 
 const UpdateItem = (props) => {
   const [title, setTitle] = useState(props.singleItem.title);
@@ -36,47 +37,56 @@ const UpdateItem = (props) => {
       alert("item update failed");
     }
   };
-  return (
-    <div>
-      <h1>アイテム更新</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={title}
-          name="title"
-          placeholder="アイテム名"
-          required
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          value={price}
-          name="price"
-          placeholder="価格"
-          required
-          onChange={(e) => setPrice(e.target.value)}
-        />
-        <input
-          type="text"
-          value={image}
-          name="image"
-          placeholder="画像"
-          required
-          onChange={(e) => setImage(e.target.value)}
-        />
-        <textarea
-          type="text"
-          value={description}
-          name="description"
-          rows="15"
-          placeholder="商品説明"
-          required
-          onChange={(e) => setDescription(e.target.value)}
-        ></textarea>
-        <button>編集</button>
-      </form>
-    </div>
-  );
+  const loignUser = useAuth();
+  if (loignUser === props.singleItem.email) {
+    return (
+      <div>
+        <h1>アイテム更新</h1>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={title}
+            name="title"
+            placeholder="アイテム名"
+            required
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            value={price}
+            name="price"
+            placeholder="価格"
+            required
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <input
+            type="text"
+            value={image}
+            name="image"
+            placeholder="画像"
+            required
+            onChange={(e) => setImage(e.target.value)}
+          />
+          <textarea
+            type="text"
+            value={description}
+            name="description"
+            rows="15"
+            placeholder="商品説明"
+            required
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+          <button>編集</button>
+        </form>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <h1>権限がありません</h1>
+      </div>
+    );
+  }
 };
 export default UpdateItem;
 
