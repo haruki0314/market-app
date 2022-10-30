@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { useState } from "react";
 import useAuth from "../../../utils/useAuth";
 
@@ -41,7 +42,10 @@ const UpdateItem = (props) => {
   if (loignUser === props.singleItem.email) {
     return (
       <div>
-        <h1>アイテム更新</h1>
+        <Head>
+          <title>アイテム編集</title>
+        </Head>
+        <h1 className="page-title">アイテム更新</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

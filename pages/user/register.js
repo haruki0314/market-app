@@ -29,9 +29,7 @@ const Register = () => {
   };
   return (
     <div>
-      <Head>
-        <title>ユーザー登録</title>
-      </Head>
+      <header>ヘッダー部</header>
       <h1 className="page-title">ユーザー登録</h1>
       <form onSubmit={handleSubmit}>
         <input
@@ -60,6 +58,7 @@ const Register = () => {
         />
         <button>登録</button>
       </form>
+      <footer>フッター</footer>
     </div>
   );
 };

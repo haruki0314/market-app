@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import useAuth from "../../../utils/useAuth";
+import Head from "next/head";
 
 const DleteItem = (props) => {
   const handleSubmit = async (e) => {
@@ -30,7 +31,10 @@ const DleteItem = (props) => {
   if (loginUser === props.singleItem.email) {
     return (
       <div>
-        <h1>アイテム更新</h1>
+        <Head>
+          <title>アイテム消去</title>
+        </Head>
+        <h1 className="delete-page">アイテム消去</h1>
         <form onSubmit={handleSubmit}>
           <h2>{props.singleItem.title}</h2>
           <Image

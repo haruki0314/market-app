@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 import useAuth from "../../utils/useAuth";
 
@@ -38,7 +39,10 @@ const CreateItem = () => {
   if (loginUser) {
     return (
       <div>
-        <h1>アイテム作成</h1>
+        <Head>
+          <title>アイテム作成</title>
+          <h1 className="page-title">アイテム作成</h1>
+        </Head>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

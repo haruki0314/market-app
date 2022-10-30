@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState } from "react";
 
 const Login = () => {
@@ -29,7 +30,10 @@ const Login = () => {
   };
   return (
     <div>
-      <h1>login</h1>
+      <header>へったー</header>
+      <Head>
+        <h1 className="page-title">login</h1>
+      </Head>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -53,6 +57,9 @@ const Login = () => {
         />
         <button>ログイン</button>
       </form>
+      <footer>
+        フッター
+      </footer>
     </div>
   );
 };
