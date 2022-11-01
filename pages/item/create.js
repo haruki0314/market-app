@@ -11,21 +11,24 @@ const CreateItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/item/create", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          title: title,
-          price: price,
-          image: image,
-          description: description,
-          email: "",
-        }),
-      });
+      const response = await fetch(
+        "https://market-app-g1bj.vercel.app/api/item/create",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify({
+            title: title,
+            price: price,
+            image: image,
+            description: description,
+            email: "",
+          }),
+        }
+      );
       const jsonData = await response.json();
       alert(jsonData.message);
       console.log(jsonData);

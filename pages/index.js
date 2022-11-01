@@ -32,7 +32,9 @@ const ReadAllitems = (props) => {
   );
 };
 export const getServerSideProps = async () => {
-  const response = await fetch("http://localhost:3000/api/item/readall");
+  const response = await fetch(
+    "https://market-app-g1bj.vercel.app/api/item/readall"
+  );
   console.log(response);
   const allItems = await response.json();
   return {

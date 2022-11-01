@@ -43,7 +43,7 @@ export default ReadSingleItem;
 export const getServerSideProps = async (context) => {
   //   alert("a");
   const response = await fetch(
-    `http://localhost:3000/api/item/${context.query.id}`
+    `https://market-app-g1bj.vercel.app/api/item/${context.query.id}`
   );
   const singleItem = await response.json();
   console.log(singleItem);
