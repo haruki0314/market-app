@@ -35,8 +35,9 @@ const Login = () => {
     <div>
       <header>へったー</header>
       <Head>
-        <h1 className="page-title">login</h1>
+        <title>login</title>
       </Head>
+      <h1 className="page-title">login</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

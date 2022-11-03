@@ -44,8 +44,8 @@ const CreateItem = () => {
       <div>
         <Head>
           <title>アイテム作成</title>
-          <h1 className="page-title">アイテム作成</h1>
         </Head>
+        <h1 className="page-title">アイテム作成</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

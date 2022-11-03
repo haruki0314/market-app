@@ -7,9 +7,7 @@ const ReadAllitems = (props) => {
   return (
     <div>
       <Head>
-        <h1>
-          <title>next</title>
-        </h1>
+        <title>next</title>
       </Head>
       {props.allItems.map((item) => (
         <Link href={`/item/${item._id}`} key={item._id}>
