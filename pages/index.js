@@ -34,8 +34,7 @@ const ReadAllitems = (props) => {
 export const getServerSideProps = async () => {
   const response = await fetch(
     "https://market-app-g1bj.vercel.app/api/item/readall"
-  );
-  console.log(response);
+  ).catch((e) => console.log(e));
   const allItems = await response.json();
   return {
     props: allItems,

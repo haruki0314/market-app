@@ -7,7 +7,7 @@ const Header = () => {
       <div>
         <Link href="/">
           <a>
-            <Image src="/header.svg" alt="header-img" />
+            <img src="/header.svg" alt="header-img" />
           </a>
         </Link>
       </div>
